@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Slipcovers — Eeze Covers Academy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #4CAF50;
+  --green-dark: #388E3C;
+  --green-light: #E8F5E9;
+  --ink: #1A1A1A;
+  --white: #ffffff;
+  --off: #F7F7F7;
+  --muted: #666;
+  --border: #E0E0E0;
+  --gold: #F9A825;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* ── IG BANNER ── */
+.ig-banner {
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  line-height: 1.5;
+}
+.ig-banner .code {
+  background: var(--ink);
+  color: var(--gold);
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin: 0 4px;
+}
+.ig-banner em {
+  font-style: normal;
+  opacity: 0.75;
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  padding: 48px 24px 0;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.hero-title {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(42px, 8vw, 72px);
+  letter-spacing: 2px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.hero-title span { color: var(--green); }
+.hero-sub {
+  font-size: 16px;
+  color: #BBB;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.hero-sub strong { color: var(--white); }
+
+.video-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.green-bar {
+  background: var(--green);
+  padding: 16px 24px;
+  text-align: center;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.green-bar span { opacity: 0.8; font-weight: 400; }
+
+.divider { height: 3px; background: var(--green-light); border: none; margin: 0; }
+
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 52px 24px;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  letter-spacing: 1px;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+/* ── WHO IT'S FOR ── */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.who-card {
+  background: var(--off);
+  border-left: 4px solid var(--green);
+  padding: 16px 18px;
+  border-radius: 0 4px 4px 0;
+}
+.who-card h3 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+}
+.who-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ── BIG QUOTE ── */
+.big-quote {
+  background: var(--ink);
+  padding: 40px 32px;
+  text-align: center;
+}
+.big-quote blockquote {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(22px, 4vw, 34px);
+  letter-spacing: 1px;
+  color: var(--green);
+  max-width: 680px;
+  margin: 0 auto 12px;
+  line-height: 1.2;
+}
+.big-quote cite { font-size: 13px; color: #888; font-style: normal; }
+
+/* ── EARNINGS ── */
+.earnings-intro {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 640px;
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+.earnings-intro strong { color: var(--ink); }
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.price-table th {
+  background: var(--ink);
+  color: var(--white);
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.price-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.price-table tr:nth-child(even) td { background: var(--off); }
+.price-table .price { color: var(--green); font-weight: 700; font-size: 15px; }
+.price-table .time { color: var(--muted); font-size: 13px; }
+
+.earnings-callout {
+  background: var(--green);
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 4px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.earnings-callout strong { font-size: 18px; display: block; margin-bottom: 4px; }
+.earnings-callout em { font-style: normal; opacity: 0.85; font-size: 13px; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-bg { background: var(--off); padding: 52px 0; }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.testi-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+.testi-stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; }
+.testi-quote { font-size: 13.5px; color: var(--ink); line-height: 1.55; margin-bottom: 10px; font-style: italic; }
+.testi-name { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); }
+
+/* ── COURSE CARDS ── */
+.course-card {
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.course-card.featured { border-color: var(--green); box-shadow: 0 0 0 2px var(--green); }
+
+.cc-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 20px;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.cc-head.dark { background: var(--ink); }
+.cc-head.green { background: var(--green); }
+.cc-head.light { background: var(--off); }
+
+.cc-tier { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+.cc-head.light .cc-tier { color: var(--muted); }
+.cc-head.dark .cc-tier, .cc-head.green .cc-tier { color: rgba(255,255,255,0.6); }
+
+.cc-name { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 24px; letter-spacing: 1px; line-height: 1.05; }
+.cc-head.light .cc-name { color: var(--ink); }
+.cc-head.dark .cc-name, .cc-head.green .cc-name { color: var(--white); }
+
+.cc-tag { font-size: 12px; margin-top: 3px; }
+.cc-head.light .cc-tag { color: var(--muted); }
+.cc-head.dark .cc-tag, .cc-head.green .cc-tag { color: rgba(255,255,255,0.7); }
+
+.cc-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+.cc-price { text-align: right; flex-shrink: 0; }
+.cc-price-main { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 32px; line-height: 1; }
+.cc-head.light .cc-price-main { color: var(--green); }
+.cc-head.dark .cc-price-main { color: var(--green); }
+.cc-head.green .cc-price-main { color: var(--white); }
+
+.cc-price-note { font-size: 11px; margin-top: 2px; }
+.cc-head.light .cc-price-note { color: var(--muted); }
+.cc-head.dark .cc-price-note, .cc-head.green .cc-price-note { color: rgba(255,255,255,0.6); }
+
+.cc-arrow { font-size: 14px; margin-top: 6px; }
+.cc-head.light .cc-arrow { color: var(--muted); }
+.cc-head.dark .cc-arrow, .cc-head.green .cc-arrow { color: rgba(255,255,255,0.4); }
+
+.cc-body {
+  padding: 18px 20px 20px;
+  background: var(--white);
+  border-top: 1.5px solid var(--border);
+  display: none;
+}
+.cc-body.open { display: block; }
+
+.cc-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+
+.cc-includes-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.cc-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  list-style: none;
+  margin-bottom: 14px;
+}
+.cc-list.single { grid-template-columns: 1fr; }
+.cc-list li { font-size: 13px; color: var(--ink); padding-left: 18px; position: relative; line-height: 1.4; }
+.cc-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+.cc-bonus {
+  background: var(--green-light);
+  border-left: 3px solid var(--green);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.cc-bonus strong { color: var(--green-dark); }
+
+.cc-payments { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.cc-pill {
+  background: var(--off);
+  border: 1.5px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.cc-pill.hi { background: var(--green); border-color: var(--green); color: var(--white); }
+
+.cc-cta {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  padding: 13px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 2px solid var(--green);
+}
+.cc-cta.outline { background: transparent; color: var(--green); }
+
+/* ── FREE TRIAL CTA ── */
+.free-cta-section {
+  background: var(--green);
+  padding: 52px 24px;
+  text-align: center;
+}
+.free-cta-section h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.free-cta-section p {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+.free-cta-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--green-dark);
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  padding: 14px 40px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+footer a { color: var(--green); text-decoration: none; }
+footer strong { color: var(--green); }
+
+@media (max-width: 560px) {
+  .cc-list { grid-template-columns: 1fr; }
+  .who-grid { grid-template-columns: 1fr 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .cc-payments { flex-direction: column; }
+  .ig-banner { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- IG EXCLUSIVE BANNER -->
+<div class="ig-banner">
+  🎁 Instagram Exclusive — Use code <span class="code">IG15</span> or <span class="code">IG20</span> at checkout for your members-only discount
+  <em>You won't find these codes anywhere else — just here, just for my Instagram community</em>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Eeze Covers Academy · West Yorkshire, UK</div>
+  <div class="hero-title">Learn to Make<br><span>Slipcovers</span><br>Like a Pro</div>
+  <div class="hero-sub">
+    <strong>All you need is the ability to sew.</strong><br>
+    Paul will teach you everything else.
+  </div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/nxYzd3FouWg" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- GREEN BAR -->
+<div class="green-bar">
+  Master Tailor · 40+ Years Experience · 50+ Professional Tutorials · Members Worldwide<br>
+  <span>Start with a FREE trial — no card needed</span>
+</div>
+
+<hr class="divider">
+
+<!-- WHO IT'S FOR -->
+<div class="section">
+  <div class="section-label">Who This Is For</div>
+  <div class="section-title">Whatever Your Starting Point — Paul Can Teach You</div>
+  <div class="who-grid">
+    <div class="who-card">
+      <h3>Career Changers</h3>
+      <p>Tired of the 9-to-5? Slipcovers offer real trade income from home — your hours, your terms.</p>
+    </div>
+    <div class="who-card">
+      <h3>Hobbyists</h3>
+      <p>Restore your own furniture without paying £500–£1,000+ to someone else. Cover your training cost in your first job.</p>
+    </div>
+    <div class="who-card">
+      <h3>Trade Professionals</h3>
+      <p>Already sewing curtains or doing upholstery? Add slipcovers and open a revenue stream your competitors can't offer.</p>
+    </div>
+    <div class="who-card">
+      <h3>Complete Beginners</h3>
+      <p>Don't worry — Paul has real cheat methods that get you making professional covers without complicated tailoring.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- BIG QUOTE -->
+<div class="big-quote">
+  <blockquote>"You bring the sewing skill. Paul brings the patterning method. Together — professional results."</blockquote>
+  <cite>The Eeze Covers Academy method</cite>
+</div>
+
+<hr class="divider">
+
+<!-- EARNINGS -->
+<div class="section">
+  <div class="section-label">What You Can Earn</div>
+  <div class="section-title">Real-World Yorkshire Pricing — The Floor, Not the Ceiling</div>
+  <p class="earnings-intro">
+    Slipcovering is a dying art — and that's exactly why it pays so well. <strong>Most upholsterers turn slipcover work away.</strong> That leaves a gap in almost every town and city in the UK. Search for a slipcover maker near you. Chances are, you'll struggle to find one.
+  </p>
+  <table class="price-table">
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th>Price Range</th>
+        <th>Typical Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Standard Armchair</td>
+        <td class="price">£300 – £495</td>
+        <td class="time">3–4 hours</td>
+      </tr>
+      <tr>
+        <td>2-Seater Sofa</td>
+        <td class="price">£450 – £695</td>
+        <td class="time">5–6 hours</td>
+      </tr>
+      <tr>
+        <td>3-Seater Sofa</td>
+        <td class="price">£550 – £850+</td>
+        <td class="time">Complex tailoring</td>
+      </tr>
+      <tr>
+        <td>Box Cushion</td>
+        <td class="price">£45 – £75</td>
+        <td class="time">30–45 minutes</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="earnings-callout">
+    <strong>£1,500 – £2,500 per month working part time</strong>
+    Paul now chooses to take just 2–3 jobs per month alongside his other work — roughly one week of actual work. No advertising. No chasing.
+    <em>In the full training, he shows you exactly how to replicate this from day one.</em>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="section-label">What Members Are Saying</div>
+    <div class="section-title">Don't Just Take Paul's Word For It</div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Finally got the confidence to charge for my work — landed my first paying client within weeks!"</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The half-patterning method is a game-changer. So much easier than I ever imagined."</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Paul explains everything perfectly. My sofa cover actually fits — properly fits!"</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Followed one tutorial and thought: that was surprisingly easy. Love it."</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Paul's business tips and training together changed everything for me."</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"If you can sew a straight line, Paul will teach you the rest."</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've never seen anyone make templating this clear. Thank you, Paul!"</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Best decision I made — gave me the confidence to start charging properly."</p>
+        <div class="testi-name">Academy Student</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COURSES -->
+<div class="section">
+  <div class="section-label">Choose Your Level</div>
+  <div class="section-title">Your Instagram Exclusive Discounts Are Below — tap a course to see more</div>
+
+  <!-- FREE TRIAL -->
+  <div class="course-card" onclick="toggleCard(this)">
+    <div class="cc-head light">
+      <div>
+        <div class="cc-tier">Tier 1 · Starter</div>
+        <div class="cc-name">Free Trial Access</div>
+        <div class="cc-tag">Try before you buy — no card required</div>
+      </div>
+      <div class="cc-price">
+        <div class="cc-price-main">FREE</div>
+        <div class="cc-price-note">Instant access</div>
+        <div class="cc-arrow">▼</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <p class="cc-desc">Get instant access to a selection of Paul's tutorial content completely free. Includes the Master Tailor's Blueprint PDF — the perfect way to see Paul's teaching style before committing.</p>
+      <div class="cc-includes-label">What's Included</div>
+      <ul class="cc-list single">
+        <li>Instant access — no payment details needed</li>
+        <li>Sample video tutorials from the full library</li>
+        <li>Master Tailor's Blueprint v3 PDF</li>
+        <li>See Paul's method before you commit</li>
+      </ul>
+      <a class="cc-cta outline" href="https://payhip.com/b/K6fgO" target="_blank">Claim Your Free Trial →</a>
+    </div>
+  </div>
+
+  <!-- DIP YOUR TOES -->
+  <div class="course-card" onclick="toggleCard(this)">
+    <div class="cc-head light">
+      <div>
+        <div class="cc-tier">Tier 2 · Explorer</div>
+        <div class="cc-name">Dip Your Toes</div>
+        <div class="cc-tag">3 months · Full access to all 50+ tutorials</div>
+      </div>
+      <div class="cc-price">
+        <div class="cc-price-main">£129</div>
+        <div class="cc-price-note">3-month access</div>
+        <div class="cc-arrow">▼</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <p class="cc-desc">Three months of full unrestricted access to the entire Eeze Covers Academy library — over 50 professional tutorials. Try the whole curriculum at a fraction of the annual cost.</p>
+      <div class="cc-includes-label">What's Included</div>
+      <ul class="cc-list">
+        <li>Full access to ALL 50+ tutorials</li>
+        <li>Chairs, sofas, arms, tucks, darts & more</li>
+        <li>3 months unlimited on-demand access</li>
+        <li>Half-patterning & mirror techniques</li>
+        <li>Beginner to intermediate content</li>
+        <li>Upgrade to annual or lifetime any time</li>
+      </ul>
+      <a class="cc-cta" href="https://learnslipcovers.com/b/dipyourtoes" target="_blank">Get 3-Month Access — £129</a>
+    </div>
+  </div>
+
+  <!-- BUILD YOUR SKILLS -->
+  <div class="course-card" onclick="toggleCard(this)">
+    <div class="cc-head light">
+      <div>
+        <div class="cc-tier">Tier 3 · Annual</div>
+        <div class="cc-name">Build Your Skills</div>
+        <div class="cc-tag">Full library · Unlimited access for a full year</div>
+      </div>
+      <div class="cc-price">
+        <div class="cc-price-main">£349</div>
+        <div class="cc-price-note">Per year</div>
+        <div class="cc-arrow">▼</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <p class="cc-desc">A full year of unlimited access to every tutorial, with new content added regularly. Build real professional-level skills at a steady pace — ideal for serious hobbyists and career-changers.</p>
+      <div class="cc-includes-label">What's Included</div>
+      <ul class="cc-list">
+        <li>ALL 50+ professional tutorials</li>
+        <li>Wing chairs, tub chairs, club chairs</li>
+        <li>Curved & sectional sofas</li>
+        <li>Roll, scroll, ledge & kidney arms</li>
+        <li>Tuck-aways, borders & T-fronts</li>
+        <li>New tutorials added throughout the year</li>
+        <li>Unlimited re-watch on any device</li>
+        <li>Half-patterning & mirror techniques</li>
+      </ul>
+      <div class="cc-bonus"><strong>Instagram Exclusive — Use code IG15</strong> at checkout for 15% off (saves £52). Only available via this page.</div>
+      <a class="cc-cta" href="https://learnslipcovers.com/b/buildyourskills" target="_blank">Start Annual Plan — £349/year</a>
+    </div>
+  </div>
+
+  <!-- PRO LIFETIME -->
+  <div class="course-card featured" onclick="toggleCard(this)">
+    <div class="cc-head dark">
+      <div>
+        <div class="cc-tier">Tier 4 · Pro</div>
+        <div class="cc-name">Pro Lifetime Access</div>
+        <div class="cc-tag">Own the complete academy forever — all future content included</div>
+        <div class="cc-badge">⭐ Most Popular</div>
+      </div>
+      <div class="cc-price">
+        <div class="cc-price-main">£999</div>
+        <div class="cc-price-note">One-off · Or 3 × £299/month</div>
+        <div class="cc-arrow">▼</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <p class="cc-desc">One payment. Lifetime access. Every tutorial Paul has ever made plus everything he adds in the future — no renewals, no subscriptions, no expiry. Direct support from Paul included forever.</p>
+      <div class="cc-includes-label">What's Included</div>
+      <ul class="cc-list">
+        <li>Lifetime access to ALL 50+ tutorials</li>
+        <li>All future videos & updates — free forever</li>
+        <li>Wing, tub, club & curved chairs</li>
+        <li>Chesterfield & sectional sofas</li>
+        <li>Every arm type including scroll, roll & kidney</li>
+        <li>Tucks, darts, T-fronts, tuck-aways</li>
+        <li>Direct Q&A support from Paul</li>
+        <li>Pay once — own forever</li>
+      </ul>
+      <div class="cc-payments">
+        <div class="cc-pill hi">Pay in full: £999</div>
+        <div class="cc-pill">3 monthly payments: £299/month</div>
+      </div>
+      <div class="cc-bonus"><strong>Instagram Exclusive — Use code IG20</strong> at checkout for 20% off (saves £200). Only available via this page.</div>
+      <a class="cc-cta" href="https://learnslipcovers.com/b/prolifetime" target="_blank">Get Pro Lifetime Access →</a>
+    </div>
+  </div>
+
+  <!-- BUSINESS LAUNCH -->
+  <div class="course-card" onclick="toggleCard(this)">
+    <div class="cc-head green">
+      <div>
+        <div class="cc-tier">Tier 5 · Business</div>
+        <div class="cc-name">Launch Your Own Business</div>
+        <div class="cc-tag">Lifetime training + your own page on Paul's #1 Google-ranked site</div>
+      </div>
+      <div class="cc-price">
+        <div class="cc-price-main">£2,995</div>
+        <div class="cc-price-note">Or 3 × £1,297/month</div>
+        <div class="cc-arrow">▼</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <p class="cc-desc">Everything in Pro Lifetime — plus Paul's complete business blueprint, your own listing on his top-ranking Google site sending local enquiries straight to you, trade fabric access, and social media starter pack.</p>
+      <div class="cc-includes-label">What's Included</div>
+      <ul class="cc-list">
+        <li>ALL 50+ tutorials + future updates (lifetime)</li>
+        <li>Your own page on Paul's #1 Google-ranked site</li>
+        <li>Local enquiries forwarded directly to you</li>
+        <li>"Paul-Trained Professional" badge & listing</li>
+        <li>Business blueprint: pricing, quoting, client growth</li>
+        <li>Partnership scripts for designers & fabric shops</li>
+        <li>Trade fabric access & supplier contacts</li>
+        <li>Social media starter pack</li>
+        <li>Old Cover Adaptation bonus module</li>
+        <li>Direct ongoing support from Paul</li>
+        <li>First year on Google listing FREE</li>
+        <li>One person per area — limited spots</li>
+      </ul>
+      <div class="cc-payments">
+        <div class="cc-pill hi">Pay in full: £2,995 — save £896 + 2 days training</div>
+        <div class="cc-pill">3 monthly payments: £1,297/month</div>
+      </div>
+      <div class="cc-bonus"><strong>Pay in full and receive 2 FREE days hands-on training</strong> with Paul in West Yorkshire (valid 12 months). Save £896 on the payment plan price.<br><br><strong>Instagram Exclusive — Use code IG15</strong> at checkout for 15% off (saves £449). Only available via this page.</div>
+      <a class="cc-cta" href="https://learnslipcovers.com/b/launchyourown" target="_blank">Start Your Business Journey →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FREE TRIAL CTA -->
+<div class="free-cta-section">
+  <h2>Start For Free Today</h2>
+  <p>No card needed. No commitment. Just Paul over your shoulder, showing you exactly how it's done.</p>
+  <a class="free-cta-btn" href="https://payhip.com/b/K6fgO" target="_blank">Claim Your Free Trial →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Questions? Contact Paul directly · <strong>eezetraining@gmail.com</strong> · <a href="https://learnslipcovers.com">learnslipcovers.com</a></p>
+  <p style="margin-top:6px;">Paul Sweeney · Master Tailor · Eeze Covers Academy · West Yorkshire, UK</p>
+  <p style="margin-top:6px;font-size:10.5px;opacity:0.5;">© Eeze Covers Academy · All rights reserved · Instagram exclusive discounts: IG15 and IG20</p>
+</footer>
+
+<script>
+function toggleCard(card) {
+  const body = card.querySelector('.cc-body');
+  const arrow = card.querySelector('.cc-arrow');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.cc-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.cc-arrow').forEach(a => a.textContent = '▼');
+  if (!isOpen) {
+    body.classList.add('open');
+    arrow.textContent = '▲';
+  }
+}
+</script>
+
+</body>
+</html>
